@@ -9,7 +9,7 @@ import reducers from './src/reducers'
 import App from './src/App'
 
 let store;
-const composeEnhancers = window.__REDUX_DEVTOOLS_ExTENSION_COMPOSE__ || compose
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
 
 if (process.env.NODE_ENV === 'production') {
     store = createStore(reducers, applyMiddleware(thunk))
