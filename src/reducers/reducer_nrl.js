@@ -1,11 +1,11 @@
 import noPointsForByes from "../data/noPointsForByes"
 import rawLadder from "../data/rawLadder"
+import winPercentage from "../data/winPercentage"
 
 const initialState = {
   rawLadder: rawLadder,
-  noPointsForByes: noPointsForByes,
-  percentageWins: [],
-  noByePoints: []
+  percentageWins: winPercentage,
+  noByePoints: noPointsForByes
 }
 
 export default (state = initialState, action) => {

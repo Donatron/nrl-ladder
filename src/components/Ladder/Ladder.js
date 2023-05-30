@@ -10,7 +10,7 @@ import TableHead from '../Table/TableHead'
 import { getTableHeaders } from '../../utils/ladderUtil'
 
 const Ladder = ({ ladderType }) => {
-  const { rawLadder, noPointsForByes } = useSelector(state => state.nrl)
+  const { rawLadder, noByePoints, percentageWins } = useSelector(state => state.nrl)
   const [headers, setHeaders] = useState([])
   const [ladderData, setLadderData] = useState(rawLadder)
   
@@ -18,12 +18,9 @@ const Ladder = ({ ladderType }) => {
   useEffect(() => {
     const tableHeaders = getTableHeaders(ladderType)
     setHeaders(tableHeaders)
-    if (ladderType === 'no-byes') {
-      setLadderData(noPointsForByes)
-    }
-    if (ladderType === 'standard') {
-      setLadderData(rawLadder)
-    }
+    if (ladderType === 'no-byes') setLadderData(noByePoints)
+    if (ladderType === 'standard')setLadderData(rawLadder)
+    if (ladderType === 'win-percentage') setLadderData(percentageWins)
   }, [ladderType])
 
   const renderTable = () => {
