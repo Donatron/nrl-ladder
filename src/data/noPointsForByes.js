@@ -1,9 +1,9 @@
-const rawLadder = [
+const noPointsForByes = [
   {
     ladderPosition: 1,
     teamName: 'Panthers',
     gamesPlayed: 11,
-    points: 18,
+    points: 16,
     wins: 7,
     draws: 0,
     losses: 4,
@@ -13,10 +13,10 @@ const rawLadder = [
     pointsDiff: 139
   },
   {
-    ladderPosition: 2,
+    ladderPosition: 3,
     teamName: 'Sharks',
     gamesPlayed: 11,
-    points: 18,
+    points: 14,
     wins: 7,
     draws: 0,
     losses: 4,
@@ -26,7 +26,7 @@ const rawLadder = [
     pointsDiff: 88
   },
   {
-    ladderPosition: 3,
+    ladderPosition: 2,
     teamName: 'Broncos',
     gamesPlayed: 13,
     points: 18,
@@ -39,10 +39,10 @@ const rawLadder = [
     pointsDiff: 81
   },
   {
-    ladderPosition: 4,
+    ladderPosition: 5,
     teamName: 'Storm',
     gamesPlayed: 11,
-    points: 18,
+    points: 14,
     wins: 7,
     draws: 0,
     losses: 4,
@@ -52,7 +52,7 @@ const rawLadder = [
     pointsDiff: 24
   },
   {
-    ladderPosition: 5,
+    ladderPosition: 4,
     teamName: 'Rabbitohs',
     gamesPlayed: 13,
     points: 16,
@@ -68,7 +68,7 @@ const rawLadder = [
     ladderPosition: 6,
     teamName: 'Dolphins',
     gamesPlayed: 12,
-    points: 16,
+    points: 14,
     wins: 7,
     draws: 0,
     losses: 5,
@@ -81,7 +81,7 @@ const rawLadder = [
     ladderPosition: 7,
     teamName: 'Raiders',
     gamesPlayed: 12,
-    points: 16,
+    points: 14,
     wins: 7,
     draws: 0,
     losses: 5,
@@ -94,7 +94,7 @@ const rawLadder = [
     ladderPosition: 8,
     teamName: 'Warriors',
     gamesPlayed: 12,
-    points: 14,
+    points: 12,
     wins: 6,
     draws: 0,
     losses: 6,
@@ -104,10 +104,10 @@ const rawLadder = [
     pointsDiff: -10
   },
   {
-    ladderPosition: 6,
+    ladderPosition: 9,
     teamName: 'Titans',
     gamesPlayed: 11,
-    points: 14,
+    points: 10,
     wins: 5,
     draws: 0,
     losses: 6,
@@ -120,7 +120,7 @@ const rawLadder = [
     ladderPosition: 10,
     teamName: 'Roosters',
     gamesPlayed: 11,
-    points: 14,
+    points: 10,
     wins: 5,
     draws: 0,
     losses: 6,
@@ -133,7 +133,7 @@ const rawLadder = [
     ladderPosition: 11,
     teamName: 'Sea Eagles',
     gamesPlayed: 12,
-    points: 13,
+    points: 11,
     wins: 5,
     draws: 1,
     losses: 6,
@@ -146,7 +146,7 @@ const rawLadder = [
     ladderPosition: 12,
     teamName: 'Knights',
     gamesPlayed: 11,
-    points: 13,
+    points: 11,
     wins: 5,
     draws: 1,
     losses: 6,
@@ -172,7 +172,7 @@ const rawLadder = [
     ladderPosition: 14,
     teamName: 'Bulldogs',
     gamesPlayed: 12,
-    points: 12,
+    points: 10,
     wins: 5,
     draws: 0,
     losses: 7,
@@ -185,7 +185,7 @@ const rawLadder = [
     ladderPosition: 15,
     teamName: 'Wests Tigers',
     gamesPlayed: 11,
-    points: 10,
+    points: 6,
     wins: 3,
     draws: 0,
     losses: 8,
@@ -211,7 +211,7 @@ const rawLadder = [
     ladderPosition: 17,
     teamName: 'Dragons',
     gamesPlayed: 12,
-    points: 8,
+    points: 6,
     wins: 3,
     draws: 0,
     losses: 9,
@@ -222,5 +222,4 @@ const rawLadder = [
   },
 ]
 
-
-export default rawLadder
+export default noPointsForByes

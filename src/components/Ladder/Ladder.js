@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import {  useSelector } from 'react-redux'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
@@ -7,32 +7,31 @@ import Table from 'react-bootstrap/Table'
 import TableBody from '../Table/TableBody'
 import TableHead from '../Table/TableHead'
 
-const Ladder = () => {
-  const { rawLadder } = useSelector(state => state.nrl)
+import { getTableHeaders } from '../../utils/ladderUtil'
+
+const Ladder = ({ ladderType }) => {
+  const { rawLadder, noPointsForByes } = useSelector(state => state.nrl)
+  const [headers, setHeaders] = useState([])
+  const [ladderData, setLadderData] = useState(rawLadder)
+  
 
   useEffect(() => {
-    console.log('using effect')
-  }, [])
-
-  const headers = [
-    'Position',
-    'Team',
-    'Played',
-    'Points',
-    'Wins',
-    'Drawn',
-    'Lost',
-    'Byes',
-    'For',
-    'Against',
-    'Diff.'
-  ]
+    const tableHeaders = getTableHeaders(ladderType)
+    setHeaders(tableHeaders)
+    if (ladderType === 'no-byes') {
+      setLadderData(noPointsForByes)
+    }
+    if (ladderType === 'standard') {
+      setLadderData(rawLadder)
+    }
+  }, [ladderType])
 
   const renderTable = () => {
     return (
       <Table>
         <TableHead headers={headers} />
-        <TableBody data={rawLadder} />
+        {/* <TableBody data={rawLadder} /> */}
+        <TableBody data={ladderData} ladderType={ladderType}/>
       </Table>
     )
   }
