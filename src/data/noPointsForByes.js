@@ -1,6 +1,7 @@
 const noPointsForByes = [
   {
     ladderPosition: 1,
+    logo: '',
     teamName: 'Panthers',
     gamesPlayed: 11,
     points: 16,
@@ -14,6 +15,7 @@ const noPointsForByes = [
   },
   {
     ladderPosition: 3,
+    logo: '',
     teamName: 'Sharks',
     gamesPlayed: 11,
     points: 14,
@@ -27,6 +29,7 @@ const noPointsForByes = [
   },
   {
     ladderPosition: 2,
+    logo: '',
     teamName: 'Broncos',
     gamesPlayed: 13,
     points: 18,
@@ -40,6 +43,7 @@ const noPointsForByes = [
   },
   {
     ladderPosition: 5,
+    logo: '',
     teamName: 'Storm',
     gamesPlayed: 11,
     points: 14,
@@ -53,6 +57,7 @@ const noPointsForByes = [
   },
   {
     ladderPosition: 4,
+    logo: '',
     teamName: 'Rabbitohs',
     gamesPlayed: 13,
     points: 16,
@@ -66,6 +71,7 @@ const noPointsForByes = [
   },
   {
     ladderPosition: 6,
+    logo: '',
     teamName: 'Dolphins',
     gamesPlayed: 12,
     points: 14,
@@ -79,6 +85,7 @@ const noPointsForByes = [
   },
   {
     ladderPosition: 7,
+    logo: '',
     teamName: 'Raiders',
     gamesPlayed: 12,
     points: 14,
@@ -92,6 +99,7 @@ const noPointsForByes = [
   },
   {
     ladderPosition: 8,
+    logo: '',
     teamName: 'Warriors',
     gamesPlayed: 12,
     points: 12,
@@ -105,6 +113,7 @@ const noPointsForByes = [
   },
   {
     ladderPosition: 9,
+    logo: '',
     teamName: 'Titans',
     gamesPlayed: 11,
     points: 10,
@@ -118,6 +127,7 @@ const noPointsForByes = [
   },
   {
     ladderPosition: 10,
+    logo: '',
     teamName: 'Roosters',
     gamesPlayed: 11,
     points: 10,
@@ -131,6 +141,7 @@ const noPointsForByes = [
   },
   {
     ladderPosition: 11,
+    logo: '',
     teamName: 'Sea Eagles',
     gamesPlayed: 12,
     points: 11,
@@ -144,6 +155,7 @@ const noPointsForByes = [
   },
   {
     ladderPosition: 12,
+    logo: '',
     teamName: 'Knights',
     gamesPlayed: 11,
     points: 11,
@@ -157,6 +169,7 @@ const noPointsForByes = [
   },
   {
     ladderPosition: 13,
+    logo: '',
     teamName: 'Eels',
     gamesPlayed: 13,
     points: 12,
@@ -170,6 +183,7 @@ const noPointsForByes = [
   },
   {
     ladderPosition: 14,
+    logo: '',
     teamName: 'Bulldogs',
     gamesPlayed: 12,
     points: 10,
@@ -183,6 +197,7 @@ const noPointsForByes = [
   },
   {
     ladderPosition: 15,
+    logo: '',
     teamName: 'Wests Tigers',
     gamesPlayed: 11,
     points: 6,
@@ -196,6 +211,7 @@ const noPointsForByes = [
   },
   {
     ladderPosition: 16,
+    logo: '',
     teamName: 'Cowboys',
     gamesPlayed: 13,
     points: 10,
@@ -209,6 +225,7 @@ const noPointsForByes = [
   },
   {
     ladderPosition: 17,
+    logo: '',
     teamName: 'Dragons',
     gamesPlayed: 12,
     points: 6,

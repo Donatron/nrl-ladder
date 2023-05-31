@@ -1,35 +1,37 @@
-const rawLadder = [
+const noPointsForByes = [
   {
     ladderPosition: 1,
-    logo: 'https://www.nrl.com/.theme/panthers/badge.svg?bust=202305190357',
+    logo: '',
     teamName: 'Panthers',
     gamesPlayed: 11,
-    points: 18,
+    points: 16,
     wins: 7,
     draws: 0,
     losses: 4,
     byes: 1,
     pointsFor: 264,
     pointsAgainst: 125,
-    pointsDiff: 139
+    pointsDiff: 139,
+    winPercentage: '65%'
   },
   {
-    ladderPosition: 2,
-    logo: 'https://www.nrl.com/.theme/sharks/badge.svg?bust=202305190357',
+    ladderPosition: 3,
+    logo: '',
     teamName: 'Sharks',
     gamesPlayed: 11,
-    points: 18,
+    points: 14,
     wins: 7,
     draws: 0,
     losses: 4,
     byes: 2,
     pointsFor: 299,
     pointsAgainst: 211,
-    pointsDiff: 88
+    pointsDiff: 88,
+    winPercentage: '65%'
   },
   {
-    ladderPosition: 3,
-    logo: 'https://www.nrl.com/.theme/broncos/badge.svg?bust=202305190357',
+    ladderPosition: 2,
+    logo: '',
     teamName: 'Broncos',
     gamesPlayed: 13,
     points: 18,
@@ -39,25 +41,27 @@ const rawLadder = [
     byes: 0,
     pointsFor: 312,
     pointsAgainst: 231,
-    pointsDiff: 81
+    pointsDiff: 81,
+    winPercentage: '65%'
   },
   {
-    ladderPosition: 4,
-    logo: 'https://www.nrl.com/.theme/storm/badge.svg?bust=202305190357',
+    ladderPosition: 5,
+    logo: '',
     teamName: 'Storm',
     gamesPlayed: 11,
-    points: 18,
+    points: 14,
     wins: 7,
     draws: 0,
     losses: 4,
     byes: 2,
     pointsFor: 250,
     pointsAgainst: 206,
-    pointsDiff: 24
+    pointsDiff: 24,
+    winPercentage: '65%'
   },
   {
-    ladderPosition: 5,
-    logo: 'https://www.nrl.com/.theme/rabbitohs/badge.svg?bust=202305190357',
+    ladderPosition: 4,
+    logo: '',
     teamName: 'Rabbitohs',
     gamesPlayed: 13,
     points: 16,
@@ -67,109 +71,117 @@ const rawLadder = [
     byes: 0,
     pointsFor: 305,
     pointsAgainst: 219,
-    pointsDiff: 87
+    pointsDiff: 87,
+    winPercentage: '65%'
   },
   {
     ladderPosition: 6,
-    logo: 'https://www.nrl.com/.theme/dolphins/badge.svg?bust=202305190357',
+    logo: '',
     teamName: 'Dolphins',
     gamesPlayed: 12,
-    points: 16,
+    points: 14,
     wins: 7,
     draws: 0,
     losses: 5,
     byes: 1,
     pointsFor: 290,
     pointsAgainst: 275,
-    pointsDiff: 15
+    pointsDiff: 15,
+    winPercentage: '65%'
   },
   {
     ladderPosition: 7,
-    logo: 'https://www.nrl.com/.theme/raiders/badge.svg?bust=202305190357',
+    logo: '',
     teamName: 'Raiders',
     gamesPlayed: 12,
-    points: 16,
+    points: 14,
     wins: 7,
     draws: 0,
     losses: 5,
     byes: 1,
     pointsFor: 260,
     pointsAgainst: 310,
-    pointsDiff: -50
+    pointsDiff: -50,
+    winPercentage: '65%'
   },
   {
     ladderPosition: 8,
-    logo: 'https://www.nrl.com/.theme/warriors/badge.svg?bust=202305190357',
+    logo: '',
     teamName: 'Warriors',
     gamesPlayed: 12,
-    points: 14,
+    points: 12,
     wins: 6,
     draws: 0,
     losses: 6,
     byes: 1,
     pointsFor: 226,
     pointsAgainst: 236,
-    pointsDiff: -10
+    pointsDiff: -10,
+    winPercentage: '65%'
   },
   {
-    ladderPosition: 6,
-    logo: 'https://www.nrl.com/.theme/titans/badge.svg?bust=202305190357',
+    ladderPosition: 9,
+    logo: '',
     teamName: 'Titans',
     gamesPlayed: 11,
-    points: 14,
+    points: 10,
     wins: 5,
     draws: 0,
     losses: 6,
     byes: 2,
     pointsFor: 258,
     pointsAgainst: 289,
-    pointsDiff: -31
+    pointsDiff: -31,
+    winPercentage: '65%'
   },
   {
     ladderPosition: 10,
-    logo: 'https://www.nrl.com/.theme/roosters/badge.svg?bust=202305190357',
+    logo: '',
     teamName: 'Roosters',
     gamesPlayed: 11,
-    points: 14,
+    points: 10,
     wins: 5,
     draws: 0,
     losses: 6,
     byes: 2,
     pointsFor: 179,
     pointsAgainst: 246,
-    pointsDiff: -67
+    pointsDiff: -67,
+    winPercentage: '65%'
   },
   {
     ladderPosition: 11,
-    logo: 'https://www.nrl.com/.theme/sea-eagles/badge.svg?bust=202305190357',
+    logo: '',
     teamName: 'Sea Eagles',
     gamesPlayed: 12,
-    points: 13,
+    points: 11,
     wins: 5,
     draws: 1,
     losses: 6,
     byes: 1,
     pointsFor: 251,
     pointsAgainst: 269,
-    pointsDiff: -18
+    pointsDiff: -18,
+    winPercentage: '65%'
   },
   {
     ladderPosition: 12,
-    logo: 'https://www.nrl.com/.theme/knights/badge.svg?bust=202305190357',
+    logo: '',
     teamName: 'Knights',
     gamesPlayed: 11,
-    points: 13,
+    points: 11,
     wins: 5,
     draws: 1,
     losses: 6,
     byes: 1,
     pointsFor: 259,
     pointsAgainst: 285,
-    pointsDiff: -26
+    pointsDiff: -26,
+    winPercentage: '65%'
   },
   {
     ladderPosition: 13,
-    logo: 'https://www.nrl.com/.theme/eels/badge.svg?bust=202305190357',
+    logo: '',
     teamName: 'Eels',
     gamesPlayed: 13,
     points: 12,
@@ -179,39 +191,42 @@ const rawLadder = [
     byes: 0,
     pointsFor: 324,
     pointsAgainst: 272,
-    pointsDiff: 52
+    pointsDiff: 52,
+    winPercentage: '65%'
   },
   {
     ladderPosition: 14,
-    logo: 'https://www.nrl.com/.theme/bulldogs/badge.svg?bust=202305190357',
+    logo: '',
     teamName: 'Bulldogs',
     gamesPlayed: 12,
-    points: 12,
+    points: 10,
     wins: 5,
     draws: 0,
     losses: 7,
     byes: 1,
     pointsFor: 207,
     pointsAgainst: 300,
-    pointsDiff: -93
+    pointsDiff: -93,
+    winPercentage: '65%'
   },
   {
     ladderPosition: 15,
-    logo: 'https://www.nrl.com/.theme/wests-tigers/badge.svg?bust=202305190357',
+    logo: '',
     teamName: 'Wests Tigers',
     gamesPlayed: 11,
-    points: 10,
+    points: 6,
     wins: 3,
     draws: 0,
     losses: 8,
     byes: 2,
     pointsFor: 202,
     pointsAgainst: 244,
-    pointsDiff: -42
+    pointsDiff: -42,
+    winPercentage: '65%'
   },
   {
     ladderPosition: 16,
-    logo: 'https://www.nrl.com/.theme/cowboys/badge.svg?bust=202305190357',
+    logo: '',
     teamName: 'Cowboys',
     gamesPlayed: 13,
     points: 10,
@@ -221,23 +236,24 @@ const rawLadder = [
     byes: 0,
     pointsFor: 241,
     pointsAgainst: 331,
-    pointsDiff: -90
+    pointsDiff: -90,
+    winPercentage: '65%'
   },
   {
     ladderPosition: 17,
-    logo: 'https://www.nrl.com/.theme/dragons/badge.svg?bust=202305190357',
+    logo: '',
     teamName: 'Dragons',
     gamesPlayed: 12,
-    points: 8,
+    points: 6,
     wins: 3,
     draws: 0,
     losses: 9,
     byes: 1,
     pointsFor: 244,
     pointsAgainst: 303,
-    pointsDiff: -59
+    pointsDiff: -59,
+    winPercentage: '65%'
   },
 ]
 
-
-export default rawLadder
+export default noPointsForByes

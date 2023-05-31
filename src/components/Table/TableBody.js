@@ -4,7 +4,15 @@ import './table.css'
 
 const TableBody = ({ data, ladderType }) => {
   const renderTableData = (data) => {
-    return Object.values(data).map((value) => <td>{value}</td>)
+    const tableData = []
+    for (const [key, value] of Object.entries(data)) {
+      if (key === 'logo') {
+        tableData.push(<td><img src={value} style={{ width: '50px', height: 'auto' }} /></td>)
+      } else {
+        tableData.push(<td>{value}</td>)
+      }
+    }
+    return tableData
   }
 
   return (

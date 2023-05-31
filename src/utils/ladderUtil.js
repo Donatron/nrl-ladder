@@ -1,6 +1,7 @@
 const tableHeaders = [
   { label: 'Position', excludedLadders: [] },
   { label: 'Actual Position', excludedLadders: ['standard'] },
+  { label: '', excludedLadders: [] },
   { label: 'Team', excludedLadders: [] },
   { label: 'Played', excludedLadders: [] },
   { label: 'Points', excludedLadders: [] },
