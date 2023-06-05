@@ -1,4 +1,7 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useDispatch } from 'react-redux'
+
+import { getOfficialLadder } from './actions'
 
 import Footer from './components/Footer/Footer'
 import Header from './components/Header/Header'
@@ -9,7 +12,12 @@ import Layout from './components/Layout/Layout'
 import './app.css'
 
 const App = () => {
+  const dispatch = useDispatch()
   const [ladderType, setLadderType] = useState('standard')
+
+  useEffect(() => {
+    dispatch(getOfficialLadder())
+  }, [])
 
   return (
     <Layout>
