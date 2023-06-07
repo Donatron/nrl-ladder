@@ -6,8 +6,6 @@
 }
 
 .form-select {
-  /* background-color: #0d0d0d;
-  color: #25CF5D; */
   color: #0d0d0d;
   font-size: 12px;
   background-color: #25CF5D;
@@ -23,5 +21,3 @@ h3 {
   font-size: 26px;
   font-weight: 200;
 }
-/* .form-select option {
-} */
