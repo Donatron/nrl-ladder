@@ -4,6 +4,7 @@ export const GET_NO_BYE_POINTS_SUCCESS = 'GET_NO_BYE_POINTS_SUCCESS'
 export const GET_OFFICIAL_LADDER = 'GET_OFFICIAL_LADDER'
 export const GET_OFFICIAL_LADDER_SUCCESS = 'GET_OFFICIAL_LADDER_SUCCESS'
 export const GET_WIN_PERCENTAGE= 'GET_WIN_PERCENTAGE'
+export const RESET_ERRORS = 'RESET_ERRORS'
 export const SET_ERRORS = 'SET_ERRORS'
 export const SET_LOADING = 'SET_LOADING'
 
@@ -15,15 +16,21 @@ export const getOfficialLadder = () => async dispatch => {
     apiUrl = 'yettobedetermined'
   }
 
-  const response = await axios.get(apiUrl)
-
-  dispatch({
-    type: GET_OFFICIAL_LADDER_SUCCESS,
-    payload: response.data
-  })
-  dispatch(setLoading(false))
-  dispatch(getNoByePoints(response.data.data))
-  dispatch(getPercentageWins(response.data.data))
+  try {
+    const response = await axios.get(apiUrl)
+  
+    dispatch({
+      type: GET_OFFICIAL_LADDER_SUCCESS,
+      payload: response.data
+    })
+    dispatch(setLoading(false))
+    dispatch(resetErrors())
+    dispatch(getNoByePoints(response.data.data))
+    dispatch(getPercentageWins(response.data.data))
+  } catch (e) {
+    dispatch(setErrors(e.response.data.errorMessage))
+    dispatch(setLoading(false))
+  }
 }
 
 const getNoByePoints = (data) => dispatch => {
@@ -62,5 +69,20 @@ export const setLoading = (isLoading) => dispatch => {
   return dispatch({
     type: SET_LOADING,
     payload: isLoading
+  })
+}
+
+export const resetErrors = () => dispatch => {
+  return dispatch({
+    type: RESET_ERRORS
+  })
+}
+
+export const setErrors = (message) => dispatch => {
+  return dispatch({
+    type: SET_ERRORS,
+    payload: {
+      message
+    }
   })
 }

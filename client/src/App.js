@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux'
 
 import { getOfficialLadder,setLoading } from './actions'
 
+import Error from './components/Error/Error'
 import Footer from './components/Footer/Footer'
 import Header from './components/Header/Header'
 import Ladder from './components/Ladder/Ladder'
@@ -16,6 +17,7 @@ const App = () => {
   const dispatch = useDispatch()
   const [ladderType, setLadderType] = useState('standard')
   const { isLoading } = useSelector(state => state.loading)
+  const { error: { message: errorMessage } } = useSelector(state => state.error)
 
   useEffect(() => {
     dispatch(setLoading(true))
@@ -26,13 +28,15 @@ const App = () => {
   return (
     <Layout>
       <Header />
+      { errorMessage && !isLoading ? <Error message={errorMessage} /> : null }
+      { !errorMessage && isLoading ? <Loading /> : null }
       {
-        !isLoading ? (
+        !isLoading && !errorMessage ? (
           <>
             <LadderType setLadderType={setLadderType} />
             <Ladder ladderType={ladderType}/>
           </>
-          ) : <Loading />
+          ) : null
       }
       <Footer />
     </Layout>
