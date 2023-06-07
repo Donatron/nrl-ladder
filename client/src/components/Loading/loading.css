@@ -1,0 +1,16 @@
+.loading {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.loading span {
+  color: #0d0d0d;
+  font-style: italic;
+}
+
+.spinner-border {
+  color: #25CF5D;
+  margin-bottom: 2rem;
+}

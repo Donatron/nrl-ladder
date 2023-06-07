@@ -1,4 +1,5 @@
 import React from 'react'
+import { ChevronDown, ChevronUp } from 'react-bootstrap-icons'
 
 import './table.css'
 
@@ -7,7 +8,7 @@ const TableBody = ({ data, ladderType }) => {
     const tableData = []
     for (const [key, value] of Object.entries(data)) {
       if (key === 'logo') {
-        tableData.push(<td><img src={value} style={{ width: '50px', height: 'auto' }} /></td>)
+        tableData.push(<td><img src={value}/></td>)
       } else {
         tableData.push(<td>{value}</td>)
       }
@@ -15,12 +16,25 @@ const TableBody = ({ data, ladderType }) => {
     return tableData
   }
 
+  const renderPosition = (position, officialPosition) => {
+    if ((position + 1) === parseInt(officialPosition))
+      return <td>{position + 1}</td>
+    if ((position + 1) < parseInt(officialPosition))
+      return <td><ChevronUp className="position-up" />{position + 1}</td>
+    if ((position + 1) > parseInt(officialPosition))
+      return <td><ChevronDown className="position-down" />{position + 1}</td>
+  } 
+
   return (
     <tbody>
       {data.map((d, idx) => {
         return (
           <tr key={d.teamName}>
-            { ladderType === 'standard' ? null : (<td>{idx + 1}</td>) }
+            {
+              ladderType === 'standard'
+                ? null
+                : renderPosition(idx, d.ladderPosition)
+            }
             {renderTableData(d)}
           </tr>
         )

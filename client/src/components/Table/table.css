@@ -1,10 +1,17 @@
+.table {
+  display: block;
+  overflow: auto;
+  table-layout: auto;
+}
+
 thead tr td {
   color: #666;
+  font-size: 12px;
 }
 
 tbody tr {
-  color: #4d4d4d;
   background-color: #fff;
+  color: #4d4d4d;
 }
 
 tbody tr:hover {
@@ -12,5 +19,23 @@ tbody tr:hover {
 }
 
 tbody tr td {
+  align-content: center;
+  font-size: 12px;
   padding: 12px !important;
+  vertical-align: middle;
+}
+
+tbody tr td img {
+  height: auto;
+  width: 50px;
+}
+
+.position-down {
+  color: #d0011b;
+  margin-right: 0.5rem;
+}
+
+.position-up {
+  color: #009639;
+  margin-right: 0.5rem;
 }

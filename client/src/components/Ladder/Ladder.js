@@ -10,16 +10,16 @@ import TableHead from '../Table/TableHead'
 import { getTableHeaders } from '../../utils/ladderUtil'
 
 const Ladder = ({ ladderType }) => {
-  const { rawLadder, noByePoints, percentageWins } = useSelector(state => state.nrl)
+  const { officialLadder, noByePoints, percentageWins } = useSelector(state => state.ladder)
   const [headers, setHeaders] = useState([])
-  const [ladderData, setLadderData] = useState(rawLadder)
+  const [ladderData, setLadderData] = useState(officialLadder)
   
 
   useEffect(() => {
     const tableHeaders = getTableHeaders(ladderType)
     setHeaders(tableHeaders)
     if (ladderType === 'no-byes') setLadderData(noByePoints)
-    if (ladderType === 'standard')setLadderData(rawLadder)
+    if (ladderType === 'standard')setLadderData(officialLadder)
     if (ladderType === 'win-percentage') setLadderData(percentageWins)
   }, [ladderType])
 
@@ -27,7 +27,6 @@ const Ladder = ({ ladderType }) => {
     return (
       <Table>
         <TableHead headers={headers} />
-        {/* <TableBody data={rawLadder} /> */}
         <TableBody data={ladderData} ladderType={ladderType}/>
       </Table>
     )
@@ -35,8 +34,8 @@ const Ladder = ({ ladderType }) => {
 
   return (
     <Row className="my-5">
-      <Col sm={{ span: 8, offset: 2 }}>
-        {rawLadder.length && renderTable()}
+      <Col xs={{ span: 8, offset: 2 }} lg={{ offset: 3 }}>
+        {ladderData.length && renderTable()}
       </Col>
     </Row>
   )
