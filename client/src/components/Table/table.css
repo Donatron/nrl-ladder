@@ -10,8 +10,8 @@ thead tr td {
 }
 
 tbody tr {
-  color: #4d4d4d;
   background-color: #fff;
+  color: #4d4d4d;
 }
 
 tbody tr:hover {
@@ -26,8 +26,8 @@ tbody tr td {
 }
 
 tbody tr td img {
-  width: 50px;
   height: auto;
+  width: 50px;
 }
 
 .position-down {

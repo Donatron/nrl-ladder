@@ -6,10 +6,10 @@
 }
 
 .form-select {
-  color: #0d0d0d;
-  font-size: 12px;
   background-color: #25CF5D;
   border-color: #25CF5D;
+  color: #0d0d0d;
+  font-size: 12px;
 }
 
 .form-select:focus {

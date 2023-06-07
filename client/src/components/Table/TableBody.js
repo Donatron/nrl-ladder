@@ -17,9 +17,12 @@ const TableBody = ({ data, ladderType }) => {
   }
 
   const renderPosition = (position, officialPosition) => {
-    if ((position + 1) === parseInt(officialPosition)) return <td>{position + 1}</td>
-    if ((position + 1) < parseInt(officialPosition)) return <td><ChevronUp className="position-up" />{position + 1}</td>
-    if ((position + 1) > parseInt(officialPosition)) return <td><ChevronDown className="position-down" />{position + 1}</td>
+    if ((position + 1) === parseInt(officialPosition))
+      return <td>{position + 1}</td>
+    if ((position + 1) < parseInt(officialPosition))
+      return <td><ChevronUp className="position-up" />{position + 1}</td>
+    if ((position + 1) > parseInt(officialPosition))
+      return <td><ChevronDown className="position-down" />{position + 1}</td>
   } 
 
   return (
@@ -27,7 +30,11 @@ const TableBody = ({ data, ladderType }) => {
       {data.map((d, idx) => {
         return (
           <tr key={d.teamName}>
-            { ladderType === 'standard' ? null : renderPosition(idx, d.ladderPosition) }
+            {
+              ladderType === 'standard'
+                ? null
+                : renderPosition(idx, d.ladderPosition)
+            }
             {renderTableData(d)}
           </tr>
         )
