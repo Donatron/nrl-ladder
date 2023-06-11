@@ -9,10 +9,7 @@ export const SET_ERRORS = 'SET_ERRORS'
 export const SET_LOADING = 'SET_LOADING'
 
 export const getOfficialLadder = () => async dispatch => {
-  let apiUrl = 'https://nrl-ladder-api.onrender.com'
-  if(process.env.NODE_ENV === 'development') {
-    apiUrl = 'http://localhost:8080'
-  }
+  const apiUrl = 'https://nrl-ladder-api.onrender.com'
 
   try {
     const response = await axios.get(`${apiUrl}/official-ladder`)
