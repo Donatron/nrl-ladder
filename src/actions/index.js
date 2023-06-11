@@ -9,15 +9,13 @@ export const SET_ERRORS = 'SET_ERRORS'
 export const SET_LOADING = 'SET_LOADING'
 
 export const getOfficialLadder = () => async dispatch => {
-  let apiUrl
-  if(process.env.NODE_ENV === 'development') {
-    apiUrl = 'http://localhost:8080'
-  } else {
-    apiUrl = 'yettobedetermined'
+  let apiUrl = 'http://localhost:8080'
+  if(process.env.NODE_ENV === 'production') {
+    apiUrl = 'https://nrl-ladder-api.onrender.com'
   }
 
   try {
-    const response = await axios.get(apiUrl)
+    const response = await axios.get(`${apiUrl}/official-ladder`)
   
     dispatch({
       type: GET_OFFICIAL_LADDER_SUCCESS,
@@ -28,7 +26,7 @@ export const getOfficialLadder = () => async dispatch => {
     dispatch(getNoByePoints(response.data.data))
     dispatch(getPercentageWins(response.data.data))
   } catch (e) {
-    dispatch(setErrors(e.response.data.errorMessage))
+    dispatch(setErrors(e.response.statusText))
     dispatch(setLoading(false))
   }
 }
