@@ -9,9 +9,9 @@ export const SET_ERRORS = 'SET_ERRORS'
 export const SET_LOADING = 'SET_LOADING'
 
 export const getOfficialLadder = () => async dispatch => {
-  let apiUrl = 'http://localhost:8080'
-  if(process.env.NODE_ENV === 'production') {
-    apiUrl = 'https://nrl-ladder-api.onrender.com'
+  let apiUrl = 'https://nrl-ladder-api.onrender.com'
+  if(process.env.NODE_ENV === 'development') {
+    apiUrl = 'http://localhost:8080'
   }
 
   try {
