@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack .",
+    "build": "rm -rf dist && webpack .",
     "deploy": "gh-pages -d dist",
     "start": "webpack-dev-server .",
     "test": "jest --watch"

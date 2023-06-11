@@ -29,7 +29,10 @@ const TableBody = ({ data, ladderType }) => {
     <tbody>
       {data.map((d, idx) => {
         return (
-          <tr key={d.teamName}>
+          <tr
+            key={d.teamName}
+            style={idx === 8 ? { borderTop: "2px solid #25CF5D" } : null}
+          >
             {
               ladderType === 'standard'
                 ? null
